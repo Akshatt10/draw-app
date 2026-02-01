@@ -3,7 +3,7 @@ import express from "express";
 import jwt from "jsonwebtoken";
 import { JWT_SECRET } from "./config";
 import { middleware } from "./middleware";
-import { CreateUserSchema, SigninSchema, CreateRoomSchema } from "@repo/common/dist/index";
+import { CreateUserSchema, SigninSchema, CreateRoomSchema } from "@repo/common";
 import { prisma } from "@repo/db";
 import cors from "cors";
 

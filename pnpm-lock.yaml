@@ -21,10 +21,10 @@ importers:
   apps/http-backend:
     dependencies:
       '@repo/common':
-        specifier: workspace:^
+        specifier: workspace:*
         version: link:../../packages/common
       '@repo/db':
-        specifier: workspace:^
+        specifier: workspace:*
         version: link:../../packages/db
       '@repo/typescript-config':
         specifier: workspace:*
@@ -97,15 +97,6 @@ importers:
 
   apps/ws-backend:
     dependencies:
-      '@repo/common':
-        specifier: workspace:^
-        version: link:../../packages/common
-      '@repo/db':
-        specifier: workspace:^
-        version: link:../../packages/db
-      '@repo/typescript-config':
-        specifier: workspace:*
-        version: link:../../packages/typescript-config
       '@types/ws':
         specifier: ^8.18.1
         version: 8.18.1
@@ -116,12 +107,27 @@ importers:
         specifier: ^8.19.0
         version: 8.19.0
     devDependencies:
+      '@repo/common':
+        specifier: workspace:*
+        version: link:../../packages/common
+      '@repo/db':
+        specifier: workspace:*
+        version: link:../../packages/db
+      '@repo/typescript-config':
+        specifier: workspace:*
+        version: link:../../packages/typescript-config
       '@types/jsonwebtoken':
         specifier: ^9.0.10
         version: 9.0.10
 
   packages/common:
     dependencies:
+      '@repo/typescript-config':
+        specifier: workspace:*
+        version: link:../typescript-config
+      typescript:
+        specifier: ^5.0.0
+        version: 5.9.2
       zod:
         specifier: ^4.3.5
         version: 4.3.5
